@@ -1,3 +1,7 @@
+'''
+Requirements: Beautiful Soup 4: https://www.crummy.com/software/BeautifulSoup/
+'''
+
 from bs4 import BeautifulSoup
 from time import sleep
 import os, urllib, re, base64
