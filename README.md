@@ -1,5 +1,15 @@
 # Outdoor Ads People Finder
 
+by Dan Sakamoto
+
+Originally for research/art projects examining images of people in the [Road 2.0 Archive of Outdoor Advertising Images](http://library.duke.edu/digitalcollections/outdooradvertising/)
+
+For more information on the process and results, see this blog post: [http://golancourses.net/2016/dans/05/10/dan-sakamoto-final-project-billboard-people/](http://golancourses.net/2016/dans/05/10/dan-sakamoto-final-project-billboard-people/)
+
+
+-----
+
+
 ###Part 1: crfasrnn_batch.py
 #####Requires:
 [Beautiful Soup 4](https://www.crummy.com/software/BeautifulSoup/)
