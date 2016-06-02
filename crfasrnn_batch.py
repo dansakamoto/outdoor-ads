@@ -34,7 +34,7 @@ f.write(s[0:-1]+'\n')
 
 for ad in os.listdir(baseDir):
 
-	if ad == ".DS_Store" or os.path.isdir(baseDir + ad):
+	if ad == ".DS_Store" or ad == ".gitignore" or os.path.isdir(baseDir + ad):
 		continue
 
 	imgID = ad[0:ad.find('.')]
