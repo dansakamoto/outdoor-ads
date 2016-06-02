@@ -6,13 +6,22 @@ from bs4 import BeautifulSoup
 from time import sleep
 import os, urllib, re, base64
 
-baseURL = "" # URL where scraped photo set is stored, web-accessible
-baseDir = "" # Local directory where scraped photo set is stored
-processURL = "http://www.robots.ox.ac.uk/~szheng/crfasrnndemo/classify_url?imageurl=http%3A%2F%2Fvmd.drama.cmu.edu%2Fdsak%2Fads%2F"
 
-resizedDir = "original_resized/"
-blurredDir = "blurred/"
-processedDir = "processed/"
+
+# EDIT THESE TWO:
+baseURL = "" # Publically-accessibly URL of the photo set directory
+baseDir = "original_photos/" # Local location of photo set directory on hard drive. You shouldn't need to change this if you leave everything in place within the outdoor-ads folder.
+
+
+
+if baseURL[-1:] != "/":
+	baseURL = baseURL + "/"
+baseURL = baseURL.replace(":", "%3A").replace("/", "%2F")
+processURL = "http://www.robots.ox.ac.uk/~szheng/crfasrnndemo/classify_url?imageurl=" + baseURL
+
+resizedDir = "CRFasRNN_results/looped_small/"
+blurredDir = "CRFasRNN_results/blurred_small/"
+processedDir = "CRFasRNN_results/processed_small/"
 
 things = ['Aeroplane', 'Bicycle', 'Bird', 'Boat', 'Bottle', 'Bus', 'Car', 'Cat', 'Chair', 'Cow', 'Dining table', 'Dog', 'Horse', 'Motorbike', 'Person', 'Potted plant', 'Sheep', 'Sofa', 'Train', 'TV/Monitor']
 
@@ -25,7 +34,7 @@ f.write(s[0:-1]+'\n')
 
 for ad in os.listdir(baseDir):
 
-	if ad == ".DS_Store":
+	if ad == ".DS_Store" or os.path.isdir(baseDir + ad):
 		continue
 
 	imgID = ad[0:ad.find('.')]

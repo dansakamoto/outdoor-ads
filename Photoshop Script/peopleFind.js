@@ -54,7 +54,7 @@ activeDocument.paste();
 
 
 doAction('FindPeopleV2', 'Outdoor Ads');
-saveMe(filePath + "/found_people/non-adjusted/" + docName + ".png")
+saveMe(filePath + "/found_people/" + docName + ".png")
 
 app.activeDocument.close()
 
