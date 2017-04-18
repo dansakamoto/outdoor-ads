@@ -20,8 +20,6 @@ Place your image set inside of the original_photos directory.
 
 This tool was designed to be run off of a public web server, so as to simplify the requests to the semantic image segmentation server. In order to run the code without modification, place the outdoor-ads directory in a place where it is accessible from the web.
 
---
-
 ### Part 2: crfasrnn_batch.py
 ##### Requires:
 [Beautiful Soup 4](https://www.crummy.com/software/BeautifulSoup/)
@@ -33,8 +31,6 @@ Use to batch-process images using the [CRF as RNN Semantic Image Segmentation De
 - Run the script.
 
 The CRFasRNN tool returns a small version of the unedited image, a version where all found objects are highlighted, and a version where the image has been blurred except for the found objects. These results are placed in the 'CRFasRNN\_results' directory in 'looped\_small', 'processed\_small', and 'blurred\_small', respectively.
-
---
 
 ### Part 3: PS Action.atn and peopleFind.js
 ##### Usage:
