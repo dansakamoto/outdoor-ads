@@ -12,36 +12,36 @@ For more information on the process and results, see this blog post: [http://gol
 -----
 
 
-#Instructions
+# Instructions
 
-###Part 1: Setup
+### Part 1: Setup
 
 Place your image set inside of the original_photos directory.
 
 This tool was designed to be run off of a public web server, so as to simplify the requests to the semantic image segmentation server. In order to run the code without modification, place the outdoor-ads directory in a place where it is accessible from the web.
 
--
+--
 
-###Part 2: crfasrnn_batch.py
-#####Requires:
+### Part 2: crfasrnn_batch.py
+##### Requires:
 [Beautiful Soup 4](https://www.crummy.com/software/BeautifulSoup/)
-#####Usage:
+##### Usage:
 Use to batch-process images using the [CRF as RNN Semantic Image Segmentation Demo](http://www.robots.ox.ac.uk/~szheng/crfasrnndemo/)
-#####Instructions:
+##### Instructions:
 - Set baseURL to the URL of the original_photos directory on the web.
 - Make sure baseDir is set to the location of the directory on your hard drive. You shouldn't need to change anything if you left everything in place within the outdoor-ads folder.
 - Run the script.
 
 The CRFasRNN tool returns a small version of the unedited image, a version where all found objects are highlighted, and a version where the image has been blurred except for the found objects. These results are placed in the 'CRFasRNN\_results' directory in 'looped\_small', 'processed\_small', and 'blurred\_small', respectively.
 
--
+--
 
-###Part 3: PS Action.atn and peopleFind.js
-#####Usage:
+### Part 3: PS Action.atn and peopleFind.js
+##### Usage:
 Use these tools in Photoshop to automate cutting out people identified by CRF as RNN.
 
 Uses divide blend mode and Color Range selection tool. This has only been tested with Photoshop CS6.
-#####Instructions:
+##### Instructions:
 - Resize all of the images in 'looped_small' back to original size and place them in ‘original\_photos/looped\_large’.
 - Resize all of the images in 'processed_small' back up to original size and place in ‘original\_photos/processed\_large'
 - Install peopleFind.js by placing it in /Applications/Adobe Photoshop CS6/Presets/Scripts
